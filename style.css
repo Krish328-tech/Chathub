@@ -1,0 +1,720 @@
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background:fixed;    
+    }
+    body{
+        background:rgba(0, 0, 0, 0.97);
+    }
+    h1{
+        transform: transformZ(36);
+        transition: 1.5s;
+        text-shadow: 1px 1px 1px #009688;
+        
+    }
+    p{
+        transform: transformZ(36);;
+        transition: 1.2s;
+    }
+    .banner{
+        width: 100%;
+        height:100vh;
+        background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.76)), url(Pictures/Back.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    .navbar {
+        width: 95%;
+        padding: 35px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: transparent; /* Fixed background color */
+        transition: background-color 0.3s ease; /* Smooth transition for other properties if needed */
+    }
+
+
+
+    .logo{
+        width: 10px;
+        cursor: pointer;
+        height:10px;
+    }
+    .navbar ul li{
+        list-style: none;
+        display:inline-block;
+        margin:0 20px;
+        position: relative;
+    }
+    .navbar ul li a {
+        text-decoration: none;
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+    .underline::after {
+        content: ' ';
+        height: 3px;
+        width: 0px;
+        background: #009688;
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+    }
+
+    .underline::before {
+        width: 0%;
+    }
+
+    .underline:hover::after {
+        width: 100%;
+        transition: 0.4s;
+    }
+    .content{
+        width: 100%;
+        position: absolute;
+        margin-top: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        color: #fff;
+    }
+    .content h1{
+        font-size: 70px;
+        margin-top: 80px;
+    }
+    .content p{
+        margin: 20px auto;
+        font-weight: 100;
+        line-height: 25px;
+    }
+    a[href="Registration FEE.html"]{
+        color: #fff;
+    }
+    .button{
+        width: 15%;
+        height: 46px;
+        text-align:center;
+        margin: 20px 10px;
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 110%;
+        border: 2px solid #009688 ;
+        background:#009688 ;
+        color: #fff;
+        cursor: pointer;
+        overflow: auto;
+        position: relative;
+        padding-bottom: 5px; ;
+        transition: all 0.8s;
+    }
+    .button:hover{
+        background: transparent;
+        border: solid #009688;
+        transition: 0.8s;
+        width: 17%;
+        height: 55px;
+    }
+    .button:visited{
+        background: transparent;
+        border: transparent;
+    }
+    /* Modal container (background) */
+    /* Modal container (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        background-color: rgba(0, 0, 0, 0.7); /* Black background with transparency */
+        overflow: hidden; /* Disable scrolling on the page when modal is open */
+        opacity: 0; /* Start with an opacity of 0 */
+        transition: opacity 0.8s ease-in-out; /* Smooth opacity transition */
+    }
+
+    .modal.show {
+        display: block; /* Show the modal */
+        opacity: 1; /* Fade in to full opacity */
+    }
+
+    /* Modal content */
+    /* Apply Font Awesome 6 Free to the entire modal */
+    /* Apply Font Awesome 6 Free to the entire modal with reduced font weight */
+    /* Apply Font Awesome 6 Free to the entire modal with reduced font weight and size */
+    .modal-content {
+        background-color: #1a1a1a; /* Dark background for the form */
+        color: #fff; /* White font color */
+        margin: 10% auto; /* Center horizontally with auto */
+        padding: 20px;
+        padding-bottom: 30px;
+        width: 360px; /* Fixed width */
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        position: relative;
+        top: 15%; /* Position the modal 15% from the top */
+        transform: translateY(-50%); /* Adjust vertical centering */
+        font-family: "Font Awesome 6 Free"; /* Apply Font Awesome to the modal */
+        font-weight: 400; /* Set a lighter font weight */
+        font-size: 14px; /* Set a smaller font size for the entire modal */
+    }
+
+    /* Apply Font Awesome 6 Free specifically to inputs and buttons with reduced font weight and size */
+
+    .modal-content span,
+    .modal-content p{
+        font-family: "Font Awesome 6 Free"; /* Ensure that all text elements in modal use Font Awesome */
+        font-weight: 400; /* Set a lighter font weight */
+        font-size: 14px; /* Set a smaller font size */
+    }
+
+    /* Adjusting specific elements to have even smaller font sizes */
+    .modal-content h2 {
+        font-size: 18px;
+        text-align: center; /* Slightly larger font for the heading */
+    }
+
+    .modal-content p,
+    .modal-content span {
+        font-size: 13px; /* Smaller font for paragraphs and spans */
+        text-align: center;
+    }
+    .modal-content a{
+        cursor:pointer;
+    }
+
+    .modal-content input[type="email"],
+    .modal-content input[type="password"] {
+        font-size: 14px; /* Smaller font for input fields */
+        
+    }
+
+    .modal-content button {
+        font-size: 14px; /* Smaller font for buttons */
+    }
+
+
+
+
+
+    /* Center the logo */
+    #regLog {
+        display: block;
+        margin: 0 auto 20px auto; /* Center logo horizontally with margin on the bottom */
+        width: 70px; /* Adjust the logo size as needed */
+        height: auto;
+    }
+
+    /* Close button */
+    .close {
+        color: white;
+        float: right;
+        font-size: 50px; /* Increased size */
+        font-weight: 900;
+        cursor: pointer;
+    }
+
+    .close:hover {
+        color: #ccc;
+    }
+
+    .close:focus {
+        color: lightgray;
+        text-decoration: none;
+    }
+
+    /* Form inputs */
+    .modal-content input[type="email"],
+    .modal-content input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        background-color: #2a2a2a; /* Darker input background */
+        color: #fff;
+        border: 1px solid #444; /* Slight border */
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    /* Login button */
+    .login-btn {
+        width: 100%;
+        padding: 10px;
+        background-color: #007BFF; /* Blue background */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .login-btn:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+
+    /* Social login buttons */
+    .social-login {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .social-login button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        background-color: #333; /* Dark button for Apple, Google, etc. */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .social-login button:hover {
+        background-color: #555; /* Darker on hover */
+    }
+
+
+    span{
+        background: transparent;
+        height:100%;
+        width:0%;
+        border-radius: 25px;
+        position:relative;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        transition: 0.5s;
+        padding-top: 5px;
+        font-weight: bolder;
+    }
+    button:hover button{
+        height:100%;
+        width:100%;
+        background: transparent;
+
+    }
+    button:hover{
+        border: none;
+    }
+    a:link{
+        color: #fff;
+        text-decoration: none;
+    }
+    a:visited{
+        color: #fff;
+        text-decoration: none;
+    }
+    button a:hover{
+        color: white;
+    }
+    .lt{
+        color: #009688;
+    }
+    .account{
+        color: #4f4f4f;
+    }
+    .hr-text {
+        display: flex;
+        align-items: center;
+    }
+
+    .hr-text hr {
+        flex-grow: 1;
+        border: none;
+        border-top: 1px solid #ccc; /* Adjust color and style as needed */
+        margin: 0 10px; /* Set the left and right margins to 10px */
+    }
+
+    .hr-text span {
+        font-size: 16px; /* Adjust font size as needed */
+        color: #ccc; /* Adjust color as needed */
+        background-color: transparent; /* Match the background color of your container */
+        padding: 0 10px; /* Add padding to the span to match the margin of the HR */
+        order: 1; /* Set order to 1 to place span in the middle */
+    }
+
+    .hr-text hr:first-child {
+        order: 0; /* Set order to 0 to place first HR on the left */
+    }
+
+    .hr-text hr:last-child {
+        order: 2; /* Set order to 2 to place last HR on the right */
+    }
+    /* Style the password input */
+    /* Container to position the icon */
+    .password-container {
+        position: relative;
+    }
+
+    /* Style the password input */
+    .password-container input[type="password"] {
+        width: 100%;
+        padding: 10px 10px 10px 30px; /* Adjust padding to make room for the icon */
+        margin: 8px 0;
+        background-color: #2a2a2a; /* Darker input background */
+        color: white;
+        border: 1px solid #444; /* Slight border */
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    /* Adding the lock icon as a background */
+    .password-container::before {
+        content: '\f023';
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 10px; /* Position the icon inside the input */
+        margin-top: 7%;
+        transform: translateY(-50%);
+        color: #4f4f4f; /* Lock icon color */
+        pointer-events: none; /* Ensure the icon doesn’t interfere with input */
+    }
+    .button-nav {
+        width: 100%;
+        height: 46px;
+        text-align: center;
+        margin: 20px 10px;
+        border-radius: 10px;
+        font-weight: 200;
+        font-size: 100%;
+        border: 2px solid #009688;
+        background: #009688;
+        color: #fff;
+        cursor: pointer;
+        overflow: auto;
+        position: relative;
+        padding-bottom: 5px;
+        transition: all 0.8s;
+    }
+
+    .button-nav:hover {
+        transform: scale(1.2);
+        transition: 0.8s;
+    }
+    .button-nav {
+        text-decoration: none;
+    }
+    .button-b {
+        font-weight: bolder;
+        color: silver;
+        background-color: #009688;
+        margin-top: 10%;
+        border: solid 4px;
+        padding: 10px;
+        border-radius: 70%;
+        animation: upDown 0.6s ease-in-out infinite alternate; /* Continuous up-down animation */
+    }
+
+    @keyframes upDown {
+        0% {
+            transform: translateY(0); /* Start at the original position */
+        }
+        100% {
+            transform: translateY(-10px); /* Move up by 10 pixels */
+            background-color: #009687b5;
+        }
+    }
+    .Chat-rooms {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns layout */
+        gap: 20px; /* Gap between the boxes */
+        margin-top: 70px;
+        margin-right: 20%;
+        margin-left: 20%;
+        border: silver;
+        color: silver;
+        padding: 20px; /* Add padding inside the container */
+        background-color: transparent; /* Optional: background color for better visibility */
+    }
+
+    .Chat-rooms div {
+        background-color: #555; /* Box background color */
+        padding: 20px;
+        text-align: center;
+        color: white;
+        border-radius: 10px; /* Rounded corners */
+    }
+    .Chat-rooms div:hover{
+        transform: scale(1.1);
+        transition: 0.3s;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    .button-div {
+        width: 90%;
+        height: 46px;
+        text-align: center;
+        margin: 20px 10px;
+        border-radius: 10px;
+        font-weight: 200;
+        font-size: 100%;
+        border: 2px solid #009688;
+        background: #009688;
+        color: #fff;
+        cursor: pointer;
+        overflow: auto;
+        position: relative;
+        padding-bottom: 5px;
+        transition: all 0.6s;
+    }
+
+    .button-div:hover {
+        transform: scale(1.2);
+        transition: 0.8s;
+    }
+    .button-div {
+        text-decoration: none;
+    }
+    .h1-div{
+        text-align: center;
+        color: #fff;;
+    }
+    .p-div{
+        color: white;
+        text-align: center;
+        margin-left: 5%;
+        margin-top: 4%;
+        margin-right:5%;
+        font-size: large;   
+        color: gray;
+        font-family:aharoni;
+        font-size: 15;
+        font-weight: bold;
+    }
+    .p-div span{
+        color: #009688;
+        font-weight: bolder;
+    }
+    .h2-div{
+        color: #fff; 
+        text-align: center;
+        margin-top: 4%;
+        font-family: aharoni;
+    }
+    .Chat-rooms-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns layout */
+        gap: 20px; /* Gap between the boxes */
+        margin-top: 70px;
+        margin-right: 20%;
+        margin-left: 20%;
+        border: silver;
+        color: silver;
+        height: 500px;
+        padding: 20px; /* Add padding inside the container */
+        background-color: transparent; /* Optional: background color for better visibility */
+    }
+
+    .Chat-rooms-cards div {
+        background-color: #555; /* Box background color */
+        padding: 20px;
+        margin: 15%;
+        text-align: center;
+        color: white;
+        border-radius: 10px; /* Rounded corners */
+        width: 186px;
+        align-items: center;
+    }
+    .Chat-rooms-cards div:hover{
+        transform: scale(1.2);
+        transition: 0.3s;
+    }
+    .end{
+        color: #fff;
+        text-align: center;
+        margin-top: 6%;
+        margin-bottom: 4%;
+    }
+    .footer {
+        background-color: #1a1a1a;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+        font-family: Aharoni;
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px;
+    }
+
+    .footer-section p {
+        margin: 4px 0;
+    }
+
+    .footer-section a {
+        color: #fff;
+        text-decoration: none;
+        margin: 5px 0;
+        position: relative; /* Needed for the underline effect */
+        padding-bottom: 5px; /* Adjust spacing for the underline */
+    }
+
+    .footer-section a::after {
+        content: '';
+        height: 3px;
+        width: 0;
+        background: #009688; /* Underline color */
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+    }
+    .footer-section a::before {
+        width:0%;
+    }
+    .footer-section a:hover::after {
+        width: 100%; /* Expands underline on hover */
+    }
+
+    .go-to-top {
+        background-color: #009688;
+        border: 1px solid #009688;
+        padding: 5px 15px;
+        color: #fff;
+        font-weight: bolder;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: transform 0.8s ease;
+    }
+
+    .go-to-top:hover {
+        transform: scale(1.2);
+    }
+
+    .footer p {
+        margin: 0;
+        font-size: 14px;
+        color: #fff;
+    }
+
+    .footer a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .footer a:hover {
+        text-decoration: none;
+    }
+    .contact-form {
+        background-color: #1a1a1a;
+        padding: 20px;
+        border-radius: 10px;
+        width: 80%;
+        max-width: 600px;
+        margin: auto;
+    }
+
+    .contact-form label {
+        display: block;
+        color: #fff;
+        margin-bottom: 5px;
+        font-family: Aharoni;
+    }
+
+    .contact-form input, .contact-form textarea {
+        width: 96%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #444;
+        border-radius: 5px;
+        background-color: #2a2a2a;
+        color: #fff;
+        font-family: Aharoni;
+    }
+
+    .contact-form button {
+        width: 100%;
+        padding: 10px;
+        background-color: #009688;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .contact-form button:hover {
+        background-color: #00796b;
+    }
+
+    .contact-form input::placeholder, .contact-form textarea::placeholder {
+        color: #bbb;
+    }
+    ::-webkit-scrollbar {
+        width: 5px;   
+        height: 5px;
+
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: #333;
+        border-radius: 5px;
+    }
+    
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    @media (max-width: 768px) {
+        .content h1 {
+            font-size: 40px;
+        }
+    
+        .content p {
+            font-size: 18px;
+        }
+    
+        .button, .button-nav {
+            width: 50%;
+            font-size: 14px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .content h1 {
+            font-size: 30px;
+        }
+    
+        .content p {
+            font-size: 14px;
+        }
+    
+        .button, .button-nav {
+            width: 70%;
+            font-size: 12px;
+        }
+    
+        .navbar ul li {
+            margin: 0 10px;
+        }
+    }

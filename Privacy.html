@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chathub | Privacy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="Pictures" href="Pictures/Logo.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="banner" id="Privacy">
+        <div class="navbar">
+            <a href="index.html"><img src="Pictures/Logo.png" alt="Logo" height="70px" width="70px" style="margin-left: 45px;"></a>
+            <ul>
+                <li><a class="underline" href="index.html">Home</a></li>
+                <li><a class="underline" href="#Privacy">Privacy</a></li>
+                <li><a class="underline" href="About.html">About Us</a></li>
+                <li><a><button type="button" class="button-nav" onclick="openModal()">Sign-Up</button></a></li>
+            </ul>
+        </div>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <img src="Pictures/Logo.png" id="regLog" alt="Registration Logo">
+                <h2 align="center">Welcome Back</h2><br>
+                <p align="center">
+                    <span class="account">Don't have an account yet? </span>
+                    <a id="signup" > 
+                        Sign up for Chathub
+                    </a>
+                </p>
+                <br>
+                <form onsubmit="return handleLogin(event)">
+                    <input type="email" id="email" name="email" placeholder="&#x2709;   Email" required>
+                    <div class="password-container">
+                        <input type="password" id="password" name="password" placeholder=" Password" required>
+                    </div>
+                    <button type="submit" class="login-btn">Login</button>
+                </form>
+                
+                <div class="social-login">
+                    <div class="hr-text">
+                        <hr class="left">OR<hr class="right">
+                    </div>
+                    <!-- Add this button below your login form -->
+                    <button type="button" class="google-login" id="createAccountBtn">Create New Account</button>
+                </div>      
+            </div>
+        </div>
+        <div class="content" id="Home">
+            <h1>Privacy Policy</h1>
+            
+                <button class="button-b"><a href="#Downward">&#x25BC;</a></button>
+            </div>
+        </div>
+    </div>
+    <section id="Downward">
+        <br>
+    <h1 class="h1-div" style="margin-top: 10%;">Chathub Privacy Policy</h1>
+    
+    <p class="p-div">
+        Welcome to Chathub! Your privacy is of utmost importance to us. We are committed to ensuring a secure and respectful environment for your online interactions. Here’s how we protect your personal information while you connect with people from around the world:<br><br>
+        <h2 class="h2-div">Your Privacy Matters</h2>
+        
+        <p class="p-div">
+            At Chathub, we believe in providing a seamless and anonymous chatting experience. We do not require you to register or provide personal information to use our platform. Our primary goal is to enable spontaneous, genuine conversations while respecting your privacy.<br><br>
+            <h2 class="h2-div">What<span style="color: #009688;"> Chathub:</span>  Collects</h2>
+            <p class="p-div">
+                <ul>
+                    <li>We collect non-personal data related to your use of our platform, such as chatroom activity, duration of sessions, and interactions. This information helps us enhance your experience and maintain the quality of our services.</li>
+                    <li>We may collect information about your device and connection, including your IP address, browser type, and operating system. This helps us ensure the functionality and security of our platform.</li>
+                </ul></p>
+                <br><br>
+                <div><h2 style="color: #fff; text-align: center;">How we Store data </h2>
+                <div class="p-div"> 
+                    
+                        <p style="font-family: aharoni; font-size: 15; font-weight: bold; color: rgb(174,170,170);">
+                            <ul>
+                                <li style="list-style: none;"><b>Service Improvement: </b>The data we collect is used to improve Chathub’s performance and user experience. This includes refining our chatroom features, enhancing security measures, and troubleshooting any issues that may arise.</li><br><br>
+                                <li style="list-style: none;"><b>Security and Support: </b>Your information helps us monitor and maintain the safety and integrity of our platform. We may use your data to address technical issues, provide support, and prevent misuse of our services.</li>
+                            </ul>
+                         <br><br></p></p> <br>
+
+                    </div>
+                            <div><h2 style="color: #fff; text-align: center;">Data Sharing and Security</h2>
+                                <div class="p-div"> 
+                                    
+                                        <p style="font-family: aharoni; font-size: 15; font-weight: bold; color: rgb(174,170,170);">
+                                            <ul>
+                                                <li style="list-style: none;"><b>No Personal Data Sharing:  </b>Chathub does not share any personal data with third parties. We are dedicated to keeping your identity and conversations private.</li><br><br>
+                                                <li style="list-style: none;"><b>Data Security:  </b>We implement robust security measures to protect the data we collect from unauthorized access or breaches. While we strive to safeguard your information, please be aware that no online service is completely immune to security risks.</li>
+                                            </ul>
+                                         <br><br></p></p> <br>
+                
+                                    </div>
+                                    <div><h2 style="color: #fff; text-align: center;">Your Rights</h2>
+                                        <div class="p-div"> 
+                                            
+                                                <p style="font-family: aharoni; font-size: 15; font-weight: bold; color: rgb(174,170,170);">
+                                                    <ul>
+                                                        <li style="list-style: none;"><b>Anonymous Usage: </b>Enjoy the freedom to chat anonymously without the need to provide personal details.</li><br><br>
+                                                        <li style="list-style: none;"><b>Control Over Data:  </b>As we do not collect personal data, you have full control over your interactions and can choose how much or how little you share within the platform.</li>
+                                                    </ul>
+                                                 <br><br></p></p> <br>
+                        
+                                            </div>
+
+                <h1 class="end">Chathub <br>
+                    Where Conversations Connect the World </h1>
+                <p class="p-div">Step into a world of endless conversations and new friendships. Whether you're here to chat with strangers from across the globe or connect with like-minded people, Chathub is your gateway to meaningful interactions. Start chatting, make new connections, and let your conversations bring the world closer to you!
+                </p><br><br>
+                <br><br> 
+    <!-- Inline JavaScript -->
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="#Home" class="footer"><img src="Pictures/Logo.png" alt="Logo"></a>
+            <div class="footer-section">
+                
+                <p><b>CHATHUB</b></p><br>
+                <p><b>Express your feelings — it's free and easy.</b></p>
+            </div>
+            <div class="footer-section">
+                <a href="About.html" class="underline">About Us</a>
+                <a href="Privacy.html" class="underline">Privacy</a>
+            </div>
+            <div class="footer-section">
+                <a href="https://www.facebook.com/login/" class="underline" target="_blank">
+                    <i class="fab fa-facebook"></i> Facebook
+                </a>
+                <a href="https://x.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJteCI6IjIifQ%3D%3D%22%7D" class="underline" target="_blank">
+                    <i class="fab fa-twitter"></i> Twitter
+                </a>
+                <a href="https://in.linkedin.com/" class="underline" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>            
+            <button class="go-to-top"><a href="#Home">GO TO TOP</a></button>
+        </div>
+        <div class="footer-copyright">
+            <p>Copyright&#169; 2024 All rights reserved. @Chathub</p>
+        </div>
+    </footer>
+    
+    
+    
+    <script src="index.js"></script>
+</body>
+</html>

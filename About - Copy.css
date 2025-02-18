@@ -1,0 +1,141 @@
+/* Contact Us Page Styles */
+#Contact {
+    background: rgba(0, 0, 0, 0.97);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-form {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.contact-form label {
+    display: block;
+    color: #fff;
+    margin-bottom: 5px;
+    font-family: Aharoni;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #2a2a2a;
+    color: #fff;
+    font-family: Aharoni;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #009688;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-form button:hover {
+    background-color: #009688;
+    transform: scale(1.1);
+    transition: background-color 0.6s ease;
+}
+
+.contact-form input::placeholder, .contact-form textarea::placeholder {
+    color: #bbb;
+}
+
+/* General Styles for Header and Footer */
+.banner {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.76)), url(Pictures/Back.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar {
+    width: 95%;
+    padding: 35px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.footer {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    font-family: Aharoni;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.footer-section p {
+    margin: 4px 0;
+}
+
+.footer-section a {
+    color: #fff;
+    text-decoration: none;
+    margin: 5px 0;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.footer-section a::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+}
+
+.footer-section a:hover::after {
+    width: 100%;
+}
+
+.go-to-top {
+    background-color: #009688;
+    border: 1px solid #009688;
+    padding: 5px 15px;
+    color: #fff;
+    font-weight: bolder;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: transform 0.8s ease;
+}
+
+.go-to-top:hover {
+    transform: scale(1.2);
+}
