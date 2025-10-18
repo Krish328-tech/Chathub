@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chathub | Contact-Section</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="Pictures" href="Pictures/Logo.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="banner" id="About">
+        <div class="navbar">
+            <a href="index.html"><img src="Pictures/Logo.png" alt="Logo" height="70px" width="70px" style="margin-left: 45px;"></a>
+            <ul>
+                <li><a class="underline" href="index.html">Home</a></li>
+                <li><a class="underline" href="Privacy.html">Privacy</a></li>
+                <li><a class="underline" href="#About">About Us</a></li>
+                <li><a><button type="button" class="button-nav" onclick="openModal()">Sign-Up</button></a></li>
+            </ul>
+        </div>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <img src="Pictures/Logo.png" id="regLog" alt="Registration Logo">
+                <h2 align="center">Welcome Back</h2><br>
+                <p align="center">
+                    <span class="account">Don't have an account yet? </span>
+                    <a id="signup" > 
+                        Sign up for Chathub
+                    </a>
+                </p>
+                <br>
+                <form onsubmit="return handleLogin(event)">
+                    <input type="email" id="email" name="email" placeholder="&#x2709;   Email" required>
+                    <div class="password-container">
+                        <input type="password" id="password" name="password" placeholder=" Password" required>
+                    </div>
+                    <button type="submit" class="login-btn">Login</button>
+                </form>
+                
+                <div class="social-login">
+                    <div class="hr-text">
+                        <hr class="left">OR<hr class="right">
+                    </div>
+                    <!-- Add this button below your login form -->
+                    <button type="button" class="google-login" id="createAccountBtn">Create New Account</button>
+                </div>      
+            </div>
+        </div>
+        <div class="content" id="Home">
+            <h1>About Us</h1>
+            
+                <button class="button-b"><a href="#Downward">&#x25BC;</a></button>
+            </div>
+        </div>
+    </div>
+    <section id="Downward">
+        <br>
+    <h1 class="h1-div" style="margin-top: 10%;">Any issues? Talk freely to us</h1>
+    <section id="ContactForm">
+        <h1 class="h1-div">Get in Touch</h1>
+        <form class="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit" class="contact-form">Send Message</button>
+        </form>
+    </section>
+    
+
+                <h1 class="end">Chathub <br>
+                    Where Conversations Connect the World </h1>
+                <p class="p-div">Step into a world of endless conversations and new friendships. Whether you're here to chat with strangers from across the globe or connect with like-minded people, Chathub is your gateway to meaningful interactions. Start chatting, make new connections, and let your conversations bring the world closer to you!
+                </p><br><br>
+                <br><br> 
+    <!-- Inline JavaScript -->
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="#Home" class="footer"><img src="Pictures/Logo.png" alt="Logo"></a>
+            <div class="footer-section">
+                
+                <p><b>CHATHUB</b></p><br>
+                <p><b>Express your feelings — it's free and easy.</b></p>
+            </div>
+            <div class="footer-section">
+                <a href="About.html" class="underline">About Us</a>
+                <a href="Privacy.html" class="underline">Privacy</a>
+            </div>
+            <div class="footer-section">
+                <a href="https://www.facebook.com/login/" class="underline" target="_blank">
+                    <i class="fab fa-facebook"></i> Facebook
+                </a>
+                <a href="https://x.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJteCI6IjIifQ%3D%3D%22%7D" class="underline" target="_blank">
+                    <i class="fab fa-twitter"></i> Twitter
+                </a>
+                <a href="https://in.linkedin.com/" class="underline" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>            
+            <button class="go-to-top"><a href="#Home">GO TO TOP</a></button>
+        </div>
+        <div class="footer-copyright">
+            <p>Copyright&#169; 2024 All rights reserved. @Chathub</p>
+        </div>
+    </footer>
+    
+    
+    
+    <script src="index.js"></script>
+</body>
+</html>
