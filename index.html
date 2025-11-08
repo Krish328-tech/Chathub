@@ -2,20 +2,29 @@
 <html>
 <head>
     <title>Chathub | Home</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="Pictures" href="Pictures/Logo.png">  
+    <!-- Styling File -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- Logo -->
+    <link rel="icon" type="Pictures" href="./assets/images/Logo.png">  
+
+    <!-- JavaScript File to handle Login-SignUp Events -->
+    <script src="./assets/js/script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-
+    <!-- Main Page -->
     <div class="banner" id="Home">
+
+        <!-- NavBar for Easy Navigation -->
         <div class="navbar">
-            <a href="index.html"><img src="Pictures/Logo.png" alt="Logo" height="70px" width="70px" style="margin-left: 45px;"></a>
+            <a href="index.html"><img src="../assets/images/Logo.png" alt="Logo" height="70px" width="70px" style="margin-left: 45px;"></a>
             <ul>
                 <li><a class="underline" href="#Home">Home</a></li>
-                <li><a class="underline" href="Privacy.html">Privacy</a></li>
-                <li><a class="underline" href="About.html">About Us</a></li>
-                <li><a><button type="button" class="button-nav" onclick="openModal()">Sign-Up</button></a></li>
+                <li><a class="underline" href="./pages/Privacy.html">Privacy</a></li>
+                <li><a class="underline" href="./pages/about.html">About Us</a></li>
+                <!--Button for Sign-UP-->
+                <li><a><button type="button" class="button-nav" onclick="openModal()">Sign-Up</button></a></li> 
             </ul>
         </div>
 
@@ -24,13 +33,17 @@
             
             <p><b>THE FUTURE OF COMMUNICATION</b><br>Stay Connected, Stay Engaged</p>
             <div>
-                <button type="button" class="button" onclick="openModal()" id ="ani">Get Started</button>
+            <!--One More Button for Sign-UP-->
+                <button type="button" class="button" onclick="openModal()" id ="ani">Get Started</button> 
             </div>
             <div class="button-container">
+            <!--Button to go to Communities Section-->
                 <button class="button-b" aria-label="Scroll Down"><a href="#Downward">&#x25BC;</a></button>
             </div>
         </div>
     </div>
+
+    <!--Communities Section-->
     <section id="Downward">
         <br>
     <h1 class="h1-div" style="margin-top: 10%;">Chathub provides the 100% free and efficient way to connect the World</h1>
@@ -68,12 +81,13 @@
         <br>
         <br>
     </section>
+<!--Other Chat Section Cards-->
         <h2 class="h2-div">Online groups and Chats</h2>
         <p></p>
         <div id="myModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal()">&times;</span>
-                <img src="Pictures/Logo.png" id="regLog" alt="Registration Logo">
+                <img src="./assets/images/Logo.png" id="regLog" alt="Registration Logo">
                 <h2 id="modalHeading">Welcome Back</h2><br>
                 <p id="toggleMessage">
                     <span class="account">Don't have an account yet? </span>
@@ -97,7 +111,7 @@
             </div>
         </div>
     
-    
+    <!--About ChatHUb Sections-->>
     <p class="p-div">
         Chathub is a free chatroom platform for enthusiasts who enjoy random conversations by registering themselve, with just one click, users can dive into chatrooms and start engaging with people from around the globe, all without having to sign up or provide personal information. Chathub offers a variety of free random chatrooms where individuals can connect and converse anonymously. Among its core features, Chathub provides private chat options, allowing users to engage in one-on-one conversations and share media such as videos and pictures at no cost. All of these features are available without any charges, making Chathub an ideal place to meet new people and experience online interactions freely. Welcome to Chathub, where you can chat without bots and enjoy a genuine communication experience.</p>
         <br><br>
@@ -129,18 +143,18 @@
                 <p class="p-div">Step into a world of endless conversations and new friendships. Whether you're here to chat with strangers from across the globe or connect with like-minded people, Chathub is your gateway to meaningful interactions. Start chatting, make new connections, and let your conversations bring the world closer to you!
                 </p><br><br>
                 <br><br> 
-
+                <!--Footer Section-->
                 <footer class="footer">
                     <div class="footer-content">
-                        <a href="#Home" class="footer"><img src="Pictures/Logo.png" alt="Logo"></a>
+                        <a href="#Home" class="footer"><img src="./assets/images/Logo.png" alt="Logo"></a>
                         <div class="footer-section">
                             
                             <p><b>CHATHUB</b></p><br>
                             <p><b>Express your feelings — it's free and easy.</b></p>
                         </div>
                         <div class="footer-section">
-                            <a href="About.html" class="underline">About Us</a>
-                            <a href="Privacy.html" class="underline">Privacy</a>
+                            <a href="./pages/about.html" class="underline">About Us</a>
+                            <a href="./pages/Privacy.html" class="underline">Privacy</a>
                         </div>
                         <div class="footer-section">
                             <a href="https://www.facebook.com/login/" class="underline" target="_blank">
@@ -159,9 +173,5 @@
                         <p>Copyright&#169; 2024 All rights reserved. @Chathub</p>
                     </div>
                 </footer>
-    
-    
-    01
-    <script src="index.js"></script>
 </body>
 </html>

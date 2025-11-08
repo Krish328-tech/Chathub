@@ -42,7 +42,7 @@ function handleLogin(event) {
 
     if (storedUser) {
         alert("Login successful! Welcome back.");
-        window.location.href = 'Chat.html';
+        window.location.href = '../../pages/Chat.html';
     } else {
         alert("Error: Account does not exist or incorrect password.");
     }
@@ -381,7 +381,7 @@ function handleExplicitWords(message) {
         // If the user has received 3 warnings, block them
         if (userWarnings[userId].count >= 3) {
             alert("You have been Kicked from Chathub due to repeated use of explicit language.");
-            window.location.href = "index.html";
+            window.location.href = "../../index.html";
             return true; // Stop further processing of this message
         }
 

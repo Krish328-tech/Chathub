@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chathub | Chat-room</title>
+    <!--StyleSheet for chat Section-->
+    <link rel="stylesheet" href="../assets/css/Chat.css">
+    <!--ChatHub Logo-->
+    <link rel="shortcut icon" href="../assets/images/Logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- Chat Screen -->
+    <div class="container">
+        <!--Left Side Area where Users appear-->
+        <div class="leftside">
+            <div class="header">
+                <!--Button for Logout-->
+                <div><img src="../assets/images/Profile0.jpg" alt="Logout" onclick="toggleDropdown()" style="margin-right: 5px; height: 40px;width: 40px;;cursor: pointer;border-radius: 50%;">
+                    <span style="color: white; font-weight: bolder; font-size: larger;align-items: center;">Chathub</span>
+                </div>
+                <!--Profile Section-->
+                <div class="userimg">
+                   <img src="../assets/images/Logo.png" class="cover" color="white" height="50px" width="50px"> 
+                </div>
+    <div id="myDropdown" class="dropdown" style="display: none; position: absolute; background-color: #333; padding: 10px; border-radius: 5px; top: 40px; left: 0;">
+        <div class="dropdown-content" style="color: white; cursor: pointer;" onclick="window.location.href='../index.html'">Logout</div>
+        </div>          
+    </div>
+    <div class="search_chat">
+        <div>
+            <input type="text" placeholder=" Search or start a new chat">
+            <ion-icon name="search-outline"></ion-icon>
+            </div>
+        </div>
+    <!-- Different Users According to different Activities-->
+    <div class="chatlist">
+        <div class="block active">
+            <div class="imgbx">
+                <img src="../assets/images/Profile0.jpg" class="cover">
+            </div>
+    <div class="details">
+        <div class="listHead">
+            <h4 class="Name"><b>Krish Gupta (You)</b></h4>
+                <p class="time"> 10:08</p>
+        </div>
+    <div class="message_p">
+        <p>Tap to Chat!!!</p>
+            </div>
+        </div>
+    </div>
+    <div class="block unread">
+        <div class="imgbx">
+            <img src="../assets/images/Profile13" class="cover">
+        </div>
+    <div class="details">
+        <div class="listHead">
+                    <h4 class="Name">Maulik Gupta</h4>
+                    <p class="time"> 12:08</p>
+                </div>
+                <div class="message_p">
+                    <p>Tap to Chat!!!</p>
+                    <b>2</b>
+                </div>
+            </div>
+        </div>
+        <div class="block unread">
+            <div class="imgbx">
+                <img src="../assets/images/Profile4" class="cover">
+            </div>
+            <div class="details">
+                <div class="listHead">
+                    <h4 class="Name">Hitesh Thakur</h4>
+                    <p class="time"> 11:56</p>
+                </div>
+                <div class="message_p">
+                    <p>Tap to Chat!!!</p>
+                    <b>1</b>
+                </div>
+            </div>
+        </div>
+        <div class="block active">
+            <div class="imgbx">
+                <img src="../assets/images/Profile3.jpg" class="cover">
+            </div>
+            <div class="details">
+                <div class="listHead">
+                    <h4 class="Name">Kashish Oberoi</h4>
+                    <p class="time"> Yesterday</p>
+                </div>
+                <div class="message_p">
+                    <p>Tap to Chat!!!</p>
+                </div>
+            </div>
+        </div>
+        <div class="block">
+            <div class="imgbx">
+                <img src="../assets/images/Profile5.jpg" class="cover">
+            </div>
+            <div class="details">
+                <div class="listHead">
+                    <h4 class="Name">Shubham</h4>
+                    <p class="time"> Yesterday</p>
+                </div>
+                <div class="message_p">
+                    <p>Tap to Chat!!!</p>
+                </div>
+            </div>
+        </div>
+        <div class="block unread">
+            <div class="imgbx">
+                <img src="../assets/images/Profile6.jpg" class="cover">
+            </div>
+            <div class="details">
+                <div class="listHead">
+                    <h4 class="Name">Samay Rana</h4>
+                    <p class="time"> 28/08/2024</p>
+                </div>
+                <div class="message_p">
+                    <p>Tap to Chat!!!</p>
+                    <b>2</b>
+                </div>
+            </div>
+        </div>
+        <div class="block">
+            <div class="imgbx">
+                <img src="../assets/images/Profile7.jpg" class="cover">
+            </div>
+            
+            <div class="details">
+                <div class="listHead">
+                    <h4 class="Name">Rishav</h4>
+                    <p class="time"> Yesterday</p>
+                </div>
+                <div class="message_p">
+                    <p>Tap to Chat!!!</p>
+                </div>
+            </div>
+        </div>
+        <div class="block active">
+            <div class="imgbx">
+                <img src="../assets/images/Profile8.jpg" class="cover">
+            </div>
+            <div class="details">
+                <div class="listHead">
+                    <h4 class="Name">Shubhangi</h4>
+                    <p class="time"> 31/08/2024</p>
+                </div>
+                <div class="message_p">
+                    <p>Tap to Chat!!!</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="block unread">
+            <div class="imgbx">
+                <img src="../assets/images/Profile9.png" class="cover">
+            </div>
+            <div class="details">
+                <div class="listHead">
+                    <h4 class="Name">Balbir</h4>
+                    <p class="time"> 27/08/2024</p>
+                </div>
+                <div class="message_p">
+                    <p>Tap to Chat!!!</p>
+                    <b>5</b>
+                </div>
+            </div>
+        </div>
+        <div class="block active">
+            <div class="imgbx">
+                <img src="../assets/images/Jio.png" class="cover">
+            </div>
+            <div class="details">
+                <div class="listHead">
+                    <h4 class="Name">Team Jio</h4>
+                    <p class="time"> 19/08/2024</p>
+                </div>
+                <div class="message_p">
+                    <p>Recharge your Mobile @699 with unlimited 5g</p>
+                </div>
+            </div>
+        </div>
+        <div class="block unread">
+            <div class="imgbx">
+                <img src="../assets/images/Profile11.jpg" class="cover">
+            </div>
+            <div class="details">
+                <div class="listHead">
+                    <h4 class="Name">Dilnawaz</h4>
+                    <p class="time"> 12/08/2024</p>
+                </div>
+                <div class="message_p">
+                    <p>Tap to Chat!!!</p>
+                    <b>5</b>
+                </div>
+            </div>
+        </div>
+        <div class="block">
+            <div class="imgbx">
+                <img src="../assets/images/Profile12.png" class="cover">
+            </div>
+            <div class="details">
+                <div class="listHead">
+                    <h4 class="Name">Rana</h4>
+                    <p class="time"> 10/08/2024</p>
+                </div>
+                <div class="message_p">
+                    <p>Tap to Chat!!!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+        <!-- Chat Section -->
+        <div class="rightside">
+            <div class="header">
+                <div class="imgtext">
+                    <div class="userimg">
+                    <img src="../assets/images/Profile0.jpg" class="cover"> 
+                </div>
+                <h4 class="Name-Top">Krish Gupta (You) <br><span>Online</span></h4>
+                </div>  
+             <ul class="nav_icons">
+                 <li><ion-icon name="search-outline"></ion-icon></li>
+                 <li><ion-icon name="ellipsis-vertical"></ion-icon></li>
+             </ul>            
+            </div>
+            <div class="chatbox">
+                
+        </div>
+        <div class="chatbox_input">
+            <ion-icon name="happy-outline"></ion-icon>
+            <ion-icon name="attach-sharp"></ion-icon>
+            <input type="text" id="user-input" placeholder="Type a message">
+            <ion-icon id="send-button" name="send-sharp"></ion-icon>
+        </div>
+    </div>
+
+</div>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="../assets/js/script.js"></script>
+</body>
+</html>
