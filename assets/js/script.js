@@ -72,7 +72,11 @@ function handleSignup(event) {
     var email = document.getElementById('signupEmail').value;
     var password = document.getElementById('signupPassword').value;
     var confirmPassword = document.getElementById('confirmPassword').value;
-
+    const gmailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+    if (!gmailPattern.test(email)) {
+    alert('Enter Something Like yourname@gmail.com');
+    return;
+    }
     if (password !== confirmPassword) {
         alert('Passwords do not match!');
         return;
