@@ -1,10 +1,9 @@
-// Toggle the user profile dropdown menu
+// Dropdown Menu
 function toggleDropdown() {
     var dropdown = document.getElementById("myDropdown");
     dropdown.style.display = dropdown.style.display === "none" || dropdown.style.display === "" ? "block" : "none";
 }
-
-// Close the dropdown if the user clicks outside of it
+// If uuser click outside model. Then Model Closes
 window.onclick = function(event) {
     if (!event.target.matches('.fa-circle-user')) {
         var dropdown = document.getElementById("myDropdown");
@@ -14,7 +13,7 @@ window.onclick = function(event) {
     }
 }
 
-// Open the modal with an animation
+// Function to open Sign-Up Modal
 function openModal() {
     var modal = document.getElementById('myModal');
     modal.style.display = 'block';
@@ -23,7 +22,7 @@ function openModal() {
     }, 10);
 }
 
-// Close the modal with an animation
+// Function to close the modal
 function closeModal() {
     var modal = document.getElementById('myModal');
     modal.classList.remove('show');
@@ -37,6 +36,12 @@ function handleLogin(event) {
     event.preventDefault();
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
+// Handling the Banned Users
+    var bannedUsers = JSON.parse(localStorage.getItem('bannedUsers')) || [];
+    if (bannedUsers.includes(email)) {
+        alert("You are banned from Chathub.");
+        return;
+    }
     var userArr = JSON.parse(localStorage.getItem('users')) || [];
     var storedUser = userArr.find(user => user.email === email && user.password === password);
 
@@ -122,26 +127,29 @@ window.onclick = function(event) {
     if (event.target == modal && !modalContent.contains(event.target)) {
         closeModal();
     }
-};// Initialize messages array from localStorage or as an empty array
+};
+
+// Initialize messages array from localStorage or as an empty array
 let allMessages = JSON.parse(localStorage.getItem('allMessages')) || {};
 let currentContact = null;
 
 // Define specific responses for particular phrases
 const keywordResponses = {
-    "Hello": "Aur Bhai Kaisa hai",
-    "Help": "Bro call emergency sevices 6969",
+    "Chathub": "Hello , Help, Thank You, Bye, How are you, What is your name",
+    "Hello": "Hi! how are you?",
+    "Help": "What Happen? Is Everything Fine",
     "Thank You": "Your's welcome",
-    "Bye": "Ja ja Chala ja ",
-    "Kaisa hai": "Bakwas tu apna bta",
-    "What is your name": "I'm Chathub, Here to replace whatsapp😎"
+    "Bye": "Take Care",
+    "How are you": "I'm fine.",
+    "What is your name": "I'm Chathub, Here to replace whatsapp"
 };
 
 // Default responses when no keyword is matched
 const defaultResponses = [
-    "Kehna kya chahta hai?????",
-    "Ram Ram Bhai🙏",
+    "I don't understand",
+    "Greetings!!",
     "I'm not sure what you mean, could you explain further?",
-    "Thank you for reaching out CHATHUB!"
+    "Thank you for reaching me out"
 ];
 
 // Function to handle contact selection
@@ -160,51 +168,7 @@ function selectContact(contactElement) {
     loadMessages();
 }
 
-// Function to send a user message
-function sendMessage() {
-    if (!currentContact) {
-        console.log("No contact selected");
-        return;
-    }
-
-    const inputField = document.querySelector('.chatbox_input input');
-    const message = inputField.value.trim();
-
-    if (message === '') return;
-
-    // Create user message object
-    const messageObject = {
-        id: Date.now(),
-        text: message,
-        time: getCurrentTime(),
-        sender: 'user'
-    };
-
-    // Ensure messages array for the current contact exists
-    allMessages[currentContact] = allMessages[currentContact] || [];
-    allMessages[currentContact].push(messageObject);
-    localStorage.setItem('allMessages', JSON.stringify(allMessages));
-
-    // Display user message
-    displayMessage(messageObject);
-
-    // Update last message in sidebar
-    updateLastMessageInSidebar(currentContact);
-
-    // Clear input field
-    inputField.value = '';
-
-    // Show typing animation before bot response
-    showTypingAnimation();
-
-    // Simulate bot response after a short delay
-    setTimeout(() => {
-        hideTypingAnimation();
-        simulateBotResponse(message);
-    }, 1000);
-}
-
-// Function to simulate bot responses based on keyword matching
+// If Given keywords don't match then give random reply
 function simulateBotResponse(userMessage) {
     let response = defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
 
@@ -218,17 +182,17 @@ function simulateBotResponse(userMessage) {
 
     // Create bot message object
     const botMessage = {
-        id: Date.now() + 1, // Unique ID for bot message
+        id: Date.now() + 1,
         text: response,
         time: getCurrentTime(),
         sender: 'friend'
     };
 
-    // Store bot message in array and localStorage
+    // Store message in array and localStorage
     allMessages[currentContact].push(botMessage);
     localStorage.setItem('allMessages', JSON.stringify(allMessages));
 
-    // Display bot message
+    // Display message
     displayMessage(botMessage);
 
     // Update last message in sidebar
@@ -263,7 +227,7 @@ function displayMessage(messageObject) {
     // Create message element
     const messageElement = document.createElement('div');
     messageElement.classList.add('message', messageObject.sender === 'user' ? 'my_message' : 'frnd_message');
-    messageElement.dataset.id = messageObject.id; // Store message ID for deletion
+    messageElement.dataset.id = messageObject.id;
 
     messageElement.innerHTML = `
         <p>${messageObject.text}<br><span>${messageObject.time}</span></p>
@@ -355,9 +319,9 @@ function showTypingAnimation() {
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
 // List of explicit words
-const explicitWords = ["ban", "man", "pan"]; // Add more words as necessary
+const explicitWords = ["lan", "man", "ban", "pan"];
 
-// Initialize user warning data in localStorage
+// Initialize user warning
 let userWarnings = JSON.parse(localStorage.getItem('userWarnings')) || {};
 
 // Function to check for explicit words in a message
@@ -367,46 +331,55 @@ function containsExplicitWords(message) {
 
 // Function to handle warnings and block the user
 function handleExplicitWords(message) {
-    const userId = currentContact; // Assuming `currentContact` is the user's identifier
+    const email = localStorage.getItem('currentUser');
 
-    if (!userWarnings[userId]) {
-        userWarnings[userId] = { count: 0 };
+    if (!email) return false;
+
+    if (!userWarnings[email]) {
+        userWarnings[email] = { count: 0 };
     }
 
-    // Check if message contains explicit words
     if (containsExplicitWords(message)) {
-        // Increment the warning count for the user
-        userWarnings[userId].count++;
+        userWarnings[email].count++;
 
-        // Show warning message at the top of the chat
-        alert(`Warning: Please do not use explicit language. You have ${3 - userWarnings[userId].count} warnings left.`);
+        localStorage.setItem('userWarnings', JSON.stringify(userWarnings));
 
-        // If the user has received 3 warnings, block them
-        if (userWarnings[userId].count >= 3) {
-            alert("You have been Kicked from Chathub due to repeated use of explicit language.");
-            window.location.href = "../../index.html";
-            return true; // Stop further processing of this message
+        let warningsLeft = 3 - userWarnings[email].count;
+
+        if (userWarnings[email].count < 3) {
+            alert(`Warning ${userWarnings[email].count}/3: Please avoid using bad language. ${warningsLeft} warnings left.`);
+        } else {
+            alert("You have been banned from Chathub for repeated violations.");
+            banUser(email);
         }
 
-        // Save warning data to localStorage
-        localStorage.setItem('userWarnings', JSON.stringify(userWarnings));
         return true;
     }
 
     return false;
 }
-// Function to kick the user (delete email and password from localStorage)
 
-function kickUser(email) {
-    // Get the users array from localStorage
+// Function to add the email to banned list
+function banUser(email) {
+    let bannedUsers = JSON.parse(localStorage.getItem('bannedUsers')) || [];
+    if (!bannedUsers.includes(email)) {
+        bannedUsers.push(email);
+        localStorage.setItem('bannedUsers', JSON.stringify(bannedUsers));
+    }
+
+    // Remove user from registered users list
     let users = JSON.parse(localStorage.getItem('users')) || [];
+    users = users.filter(user => user.email !== email);
+    localStorage.setItem('users', JSON.stringify(users));
 
-    // Find the index of the user by their email
-    const userIndex = users.findIndex(user => user.email === email);
+    // Remove session and force logout
+    alert("You have been banned from Chathub due to repeated violations.");
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('currentUser');
 
-    // If the user exists, remove them
-    
+    window.location.href = "../index.html";
 }
+
 
 
 
@@ -424,8 +397,8 @@ function sendMessage() {
 
     // Check if the message contains explicit words
     if (handleExplicitWords(message)) {
-        inputField.value = ''; // Clear the input field after a warning or kick
-        return; // Stop sending the message if it's explicit
+        inputField.value = '';
+        return;
     }
 
     // Create user message object

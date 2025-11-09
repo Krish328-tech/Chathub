@@ -16,18 +16,16 @@ function loadUserData() {
         emailCell.textContent = user.email; 
         passwordCell.textContent = user.password; 
 
-        // Create the delete button
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Delete';
-        deleteButton.style.backgroundColor = '#f44336'; // Red color for delete button
+        deleteButton.style.backgroundColor = '#f44336';
         deleteButton.style.color = 'white';
         deleteButton.style.padding = '5px 10px';
         deleteButton.style.border = 'none';
         deleteButton.style.cursor = 'pointer';
 
-        // Add click event to delete user
         deleteButton.onclick = function() {
-            deleteUser(index); // Pass the index to delete the correct user
+            deleteUser(index); 
         };
 
         actionCell.appendChild(deleteButton);
@@ -41,7 +39,7 @@ function loadUserData() {
 
 function deleteUser(index) {
     let users = JSON.parse(localStorage.getItem('users')) || [];
-    users.splice(index, 1); // Remove the user at the given index
-    localStorage.setItem('users', JSON.stringify(users)); // Save the updated user list
-    loadUserData(); // Reload the table to reflect the changes
+    users.splice(index, 1); 
+    localStorage.setItem('users', JSON.stringify(users));
+    loadUserData();
 }
