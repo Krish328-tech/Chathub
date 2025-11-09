@@ -79,6 +79,11 @@ function handleSignup(event) {
     var email = document.getElementById('signupEmail').value;
     var password = document.getElementById('signupPassword').value;
     var confirmPassword = document.getElementById('confirmPassword').value;
+    var passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+    if (!passwordPattern.test(password)) {
+        alert('Password must be at least 6 characters long and include:\n• One uppercase letter\n• One lowercase letter\n• One number\n• One special symbol');
+        return;
+    }
     const gmailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
     if (!gmailPattern.test(email)) {
     alert('Enter Something Like yourname@gmail.com');
