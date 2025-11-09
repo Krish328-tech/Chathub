@@ -42,6 +42,8 @@ function handleLogin(event) {
 
     if (storedUser) {
         alert("Login successful! Welcome back.");
+        localStorage.setItem('isLoggedIn', true);
+        localStorage.setItem('currentUser', email);
         window.location.href = '../../pages/Chat.html';
     } else {
         alert("Error: Account does not exist or incorrect password.");
@@ -121,9 +123,6 @@ window.onclick = function(event) {
         closeModal();
     }
 };// Initialize messages array from localStorage or as an empty array
-// Initialize messages array from localStorage or as an empty array
-// Initialize messages array from localStorage or as an empty array
-// Initialize all messages object from localStorage or as an empty object
 let allMessages = JSON.parse(localStorage.getItem('allMessages')) || {};
 let currentContact = null;
 
@@ -397,9 +396,7 @@ function handleExplicitWords(message) {
     return false;
 }
 // Function to kick the user (delete email and password from localStorage)
-// Function to kick the user (delete email and password from localStorage)
-// Function to kick the user (delete email and password from localStorage)
-// Function to kick the user (delete email and password from localStorage)
+
 function kickUser(email) {
     // Get the users array from localStorage
     let users = JSON.parse(localStorage.getItem('users')) || [];
@@ -461,4 +458,12 @@ function sendMessage() {
         hideTypingAnimation();
         simulateBotResponse(message);
     }, 1000);
+}
+
+function logout() {
+
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('currentUser');
+
+    window.location.href = "../index.html";
 }
